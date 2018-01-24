@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 24, 2018 at 04:19 PM
+-- Generation Time: Jan 24, 2018 at 04:29 PM
 -- Server version: 5.6.17
 -- PHP Version: 5.5.12
 
@@ -31,20 +31,7 @@ CREATE TABLE IF NOT EXISTS `images` (
   `id` int(255) NOT NULL,
   `img` varchar(255) NOT NULL,
   PRIMARY KEY (`uid`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
-
---
--- Dumping data for table `images`
---
-
-INSERT INTO `images` (`uid`, `id`, `img`) VALUES
-(2, 1, 'files/24-01-2018-1516786818.png'),
-(3, 1, 'files/24-01-2018-1516787005.png'),
-(4, 1, 'files/24-01-2018-1516787406.png'),
-(5, 1, 'files/24-01-2018-1516788013.png'),
-(6, 2, 'files/24-01-2018-1516788854.png'),
-(7, 2, 'files/24-01-2018-1516789435.png'),
-(8, 2, 'files/24-01-2018-1516806896.png');
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=12 ;
 
 -- --------------------------------------------------------
 
@@ -59,17 +46,6 @@ CREATE TABLE IF NOT EXISTS `register` (
   `pass` varchar(10) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
-
---
--- Dumping data for table `register`
---
-
-INSERT INTO `register` (`id`, `name`, `email`, `pass`) VALUES
-(1, 'Ruqaiya', 'rb@gmail.c', 'admin'),
-(2, 'abcd', 'rb@gmail.com', 'admin'),
-(3, 'Anjali', 'anju@gmail.com', 'admin'),
-(4, 'abcd', 'rb@gmail.c', 'admin'),
-(5, 'rwewht', 'abcd@gmail.com', 'admin');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
