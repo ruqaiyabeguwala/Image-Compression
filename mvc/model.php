@@ -21,6 +21,9 @@ class model{
         $ex=$con->query($qry);
           while($res=$ex->fetch_object()){
               if(($res->email==$mail) && ($res->pass==$pas)){
+                  session_start();
+                  $_SESSION['id']=$res->id;
+                  $_SESSION['name']=$res->name;
                   header('location:addImage.php');
               }
               else{
@@ -32,23 +35,49 @@ class model{
         }
         
     }
-    function compress($src, $dest) {
+    
+   
+    function up($con,$tmp,$nm,$type,$id){
+        if(empty($type)) {
+            echo "error";
+            exit();
+        }
+        $ext=null;
+       switch($type)
+       {
+           case 'image/bmp': $ext= '.bmp';
+           case 'image/gif': $ext= '.gif';
+           case 'image/jpeg': $ext= '.jpg';
+           case 'image/png': $ext= '.png';
+       }
 
-		$info = getimagesize(src);
+        $imagename=date("d-m-Y")."-".time().$ext;
+        $path="files/".$imagename;
+         $ex=move_uploaded_file($tmp,$path);
+        $info = getimagesize($path);
 
-		if ($info['mime'] == 'image/jpeg') 
-			$image = imagecreatefromjpeg($src);
+    		if ($info['mime'] == 'image/jpeg')
+        			$image = imagecreatefromjpeg($path);
 
-		else if ($info['mime'] == 'image/gif') 
-			$image = imagecreatefromgif($src);
+    		elseif ($info['mime'] == 'image/gif')
+        			$image = imagecreatefromgif($path);
 
-		else if ($info['mime'] == 'image/png') 
-			$image = imagecreatefrompng($src);
+   		elseif ($info['mime'] == 'image/png')
+        			$image = imagecreatefrompng($path);
 
-		imagejpeg($image, $dest, 75);
-
-		return $dest;
-	}
+    		imagejpeg($image, $path, 60);
+        $qry= "insert into images values('$id','$path')";
+        $ex1=$con->query($qry); 
+     if($ex1>0)
+              {
+              	echo '<script language="javascript">alert("File successfully Uploaded")</script>';
+              	
+              } 
+        else{
+          echo '<script language="javascript">alert("Upload unsuccessfull")</script>';
+        }
+    }
+    
 }
 
 ?>

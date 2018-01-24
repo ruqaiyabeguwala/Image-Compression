@@ -7,13 +7,21 @@ include "mvc/control.php";
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
-   
+   <script type="application/javascript" src="js/bootstrap.min.js"></script>
+   <script type="application/javascript" src="js/jquery-3.1.1.min.js"></script>
+   <script type="application/javascript" src="js/jquery.js"></script>
+    <link href="http://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
 </head>
 <body>
     
-    
-    <form action="" method="post" >
-    <h3>Register</h3>
+    <div class="container-fluid">
+        <center>  <h1 >WELCOME</h1> </center>
+       <div class="row" style="margin-top:30px">
+            
+            <div class="col-sm-offset-3 col-sm-3" style="border-style:inset;min-height:300px">
+               <form action="" method="post" >
+    <h3 style="text-align:center">Register</h3>
     <ul>
         <label for="">Enter User Name:</label>
         <input type="text" name="user" required>
@@ -28,8 +36,11 @@ include "mvc/control.php";
         
         
     </ul>
-    </form> 
-       <h3>Login</h3>   
+    </form>   
+                
+            </div>
+            <div class="col-sm-offset-1 col-sm-3" style="border-style:inset;min-height:300px">
+            <h3 style="text-align:center">Login</h3>   
         <form action="" method="post" >
     
     <ul>
@@ -45,6 +56,18 @@ include "mvc/control.php";
     </ul>
     </form>        
  
+            
+            </div>
+            
+            
+        </div>
+        
+    </div>
+    
+    
+    
+   
+       
 
 </body>
 </html>
