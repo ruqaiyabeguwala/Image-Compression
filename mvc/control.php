@@ -26,7 +26,10 @@ if(isset($_POST['login'])){
            
          if ($_FILES["myfile"]["error"] > 0) {
         			$error = $_FILES["file"]["error"];
-    		} 
+    		}
+           else if($_FILES['myfile']['size']>0){
+               echo "Select and image (< 5mb)";
+           }
     		else if (($_FILES["myfile"]["type"] == "image/gif") || 
 			($_FILES["myfile"]["type"] == "image/jpeg") || 
 			($_FILES["myfile"]["type"] == "image/png") || 
