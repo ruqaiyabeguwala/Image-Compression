@@ -10,7 +10,7 @@ class model{
         $qry="insert into $table($key) values('$value')";
         $ex=$con->query($qry);
         if($ex>0){
-            echo "data inserted successfully";
+           echo '<script language="javascript">alert("Registration successfull")</script>';
         }
         
     }
@@ -24,15 +24,12 @@ class model{
                   session_start();
                   $_SESSION['id']=$res->id;
                   $_SESSION['name']=$res->name;
-                  header('location:addImage.php');
+                  header('location:dashboard.php');
               }
               else{
-                  echo "Incorrect username and password";
+                  echo '<script language="javascript">alert("Incorrect password.")</script>';
               }
           }
-        if($ex>0){
-            echo "data inserted successfully";
-        }
         
     }
     
@@ -66,7 +63,7 @@ class model{
         			$image = imagecreatefrompng($path);
 
     		imagejpeg($image, $path, 60);
-        $qry= "insert into images values('$id','$path')";
+        $qry= "insert into images(id,img) values('$id','$path')";
         $ex1=$con->query($qry); 
      if($ex1>0)
               {
@@ -76,6 +73,15 @@ class model{
         else{
           echo '<script language="javascript">alert("Upload unsuccessfull")</script>';
         }
+    }
+    function view($con,$id){
+        $qry = "select * from images where id='$id'";
+        $ex=$con->query($qry);
+        while($res=$ex->fetch_object()){
+            $rs[]=$res;
+            
+        }
+        return @$rs;
     }
     
 }

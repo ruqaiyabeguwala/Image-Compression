@@ -15,11 +15,11 @@ include "mvc/control.php";
 </head>
 <body>
     
-    <div class="container-fluid">
+    <div class="container-fluid" style="background:#cccccc;min-height:700px">
         <center>  <h1 >WELCOME</h1> </center>
        <div class="row" style="margin-top:30px">
             
-            <div class="col-sm-offset-3 col-sm-3" style="border-style:inset;min-height:300px">
+            <div class="col-sm-offset-3 col-sm-3" style="border-style:inset;min-height:300px;background:#ffffff">
                <form action="" method="post" >
     <h3 style="text-align:center">Register</h3>
     <ul>
@@ -32,14 +32,14 @@ include "mvc/control.php";
          <label for="">Enter Password:</label>
         <input type="password" name="pass" required>
         <br>
-            <input type="submit" name="sub">
+            <input type="submit" class="btn btn-success" name="sub">
         
         
     </ul>
     </form>   
                 
             </div>
-            <div class="col-sm-offset-1 col-sm-3" style="border-style:inset;min-height:300px">
+            <div class="col-sm-offset-1 col-sm-3" style="border-style:inset;min-height:300px;background:#ffffff">
             <h3 style="text-align:center">Login</h3>   
         <form action="" method="post" >
     
@@ -50,7 +50,7 @@ include "mvc/control.php";
          <label for="">Enter Password:</label>
         <input type="password" name="lpass" required>
         <br>
-            <input type="submit" name="login" >
+            <input type="submit" name="login" class="btn btn-success">
         
         
     </ul>
